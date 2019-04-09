@@ -1,11 +1,18 @@
-# VEX tutorial
-## A collection of code snippets and examples showing syntax and capabilities of VEX language inside SideFX Houdini
+# VEX tutorial/教程
+## A collection of code snippets and examples showing syntax and capabilities of VEX language inside SideFX Houdini/展示SideFX Houdini中VEX语法及样例的集合
 <p align="right"><small><sup>by Juraj Tomori</sup></small></p>
 
+<p align="right"><small><sup>Translate By AreChen</sup></small></p>
 <br>
 
 ### Intro
 Recently I made a small lecture for other students at Filmakademie. They requested an introduction lecture to using VEX. I did not focus on practical examples and fancy operations, but on syntax, capabalities and usage. During the lecture I got some ideas on extending the content. So I looked more into the topics and collected them along with explanations inside one hip file. This tutorial belongs to series of my posts at my [blog](https://jurajtomori.wordpress.com/). However because of the formatting and other limitations of Wordpress I decided to place it here. It will also be easier to keep track of changes.
+
+### 前言
+最近我在Filmakademie为一些学生做了一个小讲座。他们要求介绍一下VEX，我并没有为他们展示实际案例也没有炫技，而是更加注重在VEX的语法、功能及用法上。在演讲中，我更加开拓思路，所以我对VEX做了更加深入地研究，并将它们收集在.hip文件中并赋予了解释，这套教材本来放在我的个人[博客](https://jurajtomori.wordpress.com/),但由于Wordpress的某些限制，我将他们放在GITHUB中，这样更加方便追踪它的变化。
+
+
+
 
 <br>
 
