@@ -21,7 +21,10 @@ You can clone, or [directly download](https://github.com/jtomori/vex_tutorial/ar
 It contains **examples.hipnc** and [**vex/include/myLib.h**](./vex/include/myLib.h) files which are full of various examples with explanations in comments.<br>
 It is the best to check all the nodes with open *Geometry Spreadsheet* and *Console Output* windows to see values of attributes and output text. Alternatively you can use this page for quick looking at the topics covered and most of the code that I include here as well. I am not including here all of the code since sometimes it might not make a lot of sense outside of Houdini. Where necessary I include related functions from *myLib.h* or attach screenshots.
 
-
+### 如何使用
+您可以克隆或[直接下载]（https://github.com/jtomori/vex_tutorial/archive/master.zip）此仓库。<br>
+它包含** examples.hipnc **和[** vex / include / myLib.h **]（./ vex / include / myLib.h）文件，其中包含各种示例以及注释。<br>
+检阅时最好打开* Geometry Spreadsheet *和* Console Output *窗口检查这些节点以查看属性输出的值。 或者，您可以使用此页面快速查看所涵盖的主题以及此处包含的大部分代码。 这里并没有涵盖所有的代码，因为有时它可能在Houdini之外并没有多大意义。 必要时我会在* myLib.h *中包含相关函数或附上截图。
 <br>
 
 ### Topics
