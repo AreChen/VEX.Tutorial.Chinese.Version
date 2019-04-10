@@ -28,7 +28,7 @@ It is the best to check all the nodes with open *Geometry Spreadsheet* and *Cons
 <br>
 
 ### Topics
-* [Reading parameter values](#reading-parameter-values)
+* [Reading parameter values/阅读参数值](#reading-parameter-values)
 * [Reading attributes](#reading-attributes)
 * [Exporting attributes](#exporting-attributes)
 * [Reading arrays](#reading-arrays)
@@ -74,34 +74,48 @@ It is the best to check all the nodes with open *Geometry Spreadsheet* and *Cons
 <br>
 
 ### Tutorial
+### 教 程
 
 #### Reading parameter values
+#### 阅读参数值
 ```C
 /*
 multi-line comments can be typed
 using this syntax
+使用此语法可以进行多行注释
 */
 
-// in vex you can evaluate values from parameters on this node
-// by calling ch*() function, with * representing a signature, check the docs
-// for the full list, some of them: chv() - vector, chu() - vector2, chs() - string
-// chramp() - ramp, chp() - vector4, chi() - int, chf() - float, ch4() - matrix, ch3() - matrix3 ...
-// you can also use optioinal argument for time which will enable you to evaluate
+// in vex you can evaluate values from parameters on this node 
+// 在VEX中你可以通过节点的参数计算数值
+// by calling ch*() function, with * representing a signature, check the docs 
+// 调用 ch*() 函数，*表示拥有多个ch()函数，具体参阅文档(F1)
+// for the full list, some of them: chv() - vector, chu() - vector2, chs() - string 
+// 其中一些是 : chv() - vector(矢量/三维向量), chu() - vector2(二维向量), chs() - string(字符串)
+// chramp() - ramp, chp() - vector4, chi() - int, chf() - float, ch4() - matrix, ch3() - matrix3 ... 
+// chramp() - (渐变), chp() - (四维向量), chi() - (整型数值), chf() - (浮点数值), ch4() - (4X4矩阵), ch3() - (3X3矩阵) ...
+// you can also use optioinal argument for time which will enable you to evaluate the channel at different frame
+// 你也可以使用时间作为参数
 // the channel at different frame
-//
+// 使你可以在不同帧数上计算通道的值
 // once you type ch*() in your code, you can press a button on the right, to
+// 当你在代码中使用了 ch*() 
 // generate a UI parameter for it automatically, you can do the same by hand as well
+// 你可以手动点击右边的按钮生成UI界面以供控制参数
 float y = chf("y_position");
 vector col = chv("color");
 matrix3 xform = ch3("xform");
 
 // you can also reference parameters from external nodes
+// 你也可以提取外部节点的参数
 // if there is an expression (Python/hscript) in the parameter,
+// 如果在参数中含有表达式(Python/Hscript)
 // it will be evaluated
+// 将会被计算
 float up = chf("../params_1/move_up");
 
 
 // apply variables to attributes
+// 将变量赋予属性
 v@P.y += y*5;
 v@Cd = col;
 v@P *= xform;
@@ -113,6 +127,7 @@ v@myVec += v@N.y;
 <br>
 
 #### Reading attributes
+#### 阅读属性
 ```C
 float blend = chf("blend");
 float blendPig = chf("blend_pig");
