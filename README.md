@@ -149,6 +149,8 @@ vector P1, P2, P3, P_new;
 
 // this approach is useful for querying attributes from different points (other from the currently processed one)
 // node input numbering starts from 0 (first input), 1 (second input) ...
+//下面这种方法有利于查询点属性
+
 P1 = point(0, "P", @ptnum);
 P2 = point(1, "P", @ptnum);
 
