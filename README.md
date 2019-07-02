@@ -28,7 +28,7 @@ It is the best to check all the nodes with open *Geometry Spreadsheet* and *Cons
 <br>
 
 ### Topics
-* [Reading parameter values/阅读参数值](#reading-parameter-values)
+* [Reading parameter values/读取参数值](#reading-parameter-values)
 * [Reading attributes](#reading-attributes)
 * [Exporting attributes](#exporting-attributes)
 * [Reading arrays](#reading-arrays)
@@ -77,7 +77,7 @@ It is the best to check all the nodes with open *Geometry Spreadsheet* and *Cons
 ### 教 程
 
 #### Reading parameter values
-#### 阅读参数值
+#### 读取参数值
 ```C
 /*
 multi-line comments can be typed
@@ -127,7 +127,7 @@ v@myVec += v@N.y;
 <br>
 
 #### Reading attributes
-#### 阅读属性
+#### 读取属性
 ```C
 float blend = chf("blend");
 float blendPig = chf("blend_pig");
@@ -138,10 +138,14 @@ vector P1, P2, P3, P_new;
 // point from second input with the same @ptnum is retrieved
 // v@P can also be replaced with @P, since its signature can be guessed as it is
 // commonly used attribute, however I prefer explicit declaration :)
+//这是读取属性的一种方式，但只有当两个输入值完全相同时才会生效
+//从第二个point获取属性并检索相同的@ptnum v@P也可以用@P替换 
+//从它的标识可看出来它是常用属性，但我更喜欢明确的声明:)
 // v@ - vector, i@ - integer, f@ - float, 3@ - matrix3, p@ - vector4
 // 4@ - matrix4, 2@ - matrix2, u@ - vector2, s@ - string,
 //P1 = v@P;
 //P2 = v@opinput1_P; // inputs numbering starts at 0, therefore 1 refers to the second input
+					 //输入值从第0位开始，因此1是指第二个输入值
 
 // this approach is useful for querying attributes from different points (other from the currently processed one)
 // node input numbering starts from 0 (first input), 1 (second input) ...
