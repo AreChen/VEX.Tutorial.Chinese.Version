@@ -247,39 +247,52 @@ vector myVectorArray[] = v[]@myVectorArray;
 matrix3 a = ident() * 5;
 
 v@P.x *= a.yy; // you can access matrix components using this syntax
+			   // 你可以通过以下语法访问阵列元素
 // x -> 1st element, y -> 2nd, z -> 3rd, w -> 4th
-v@P.y = 4[]@myMatrix4x4Array[1].ww; // second array matrix, last element
+// x 第一位元素,y 第二位元素,z 第三位元素,w 第四位元素
+v@P.y = 4[]@myMatrix4x4Array[1].ww; // second array matrix, last element 第二个矩阵数组的最后一个元素
 v@P.z = u[]@myVector2Array[1][0]; // this is how you can access array of vectors - second array, first element
+								  // 访问向量数组的第二个数组的第一个元素
 ```
 <br>
 
-#### Arrays
+#### Arrays 
+#### 数组
 ```C
 int numbers[] = array(1,2,3,4);
 
 // arrays can be handled in Pythonic way
-numbers = numbers[::-1]; // array reverse
+// 数组可以使用Python的方式处理
+numbers = numbers[::-1]; // array reverse 数组翻转
 
 // rading from arrays
+// 从数组中读取
 i@firstItem = numbers[0];
 // writing into arrays
+// 写入数组
 numbers[0] += 1;
 // indexing can also go backwards
+// 也可以倒着索引
 i@secondLastItem = numbers[-2];
 
 // slicing
+// 切分
 i[]@firstHalf = numbers[:2];
 i[]@secondHalf = numbers[2:];
 
 // some useful functions
+// 一些有用的函数
 i@returnedPopVal = pop(numbers); // removes the last element and returns it
+								//移除最后的元素并且返回它
 push(numbers, i@returnedPopVal); // appends element to the array
-i@lenghtOfArray = len(numbers);
+								//添加元素到数组
+i@lenghtOfArray = len(numbers);//返回长度
 
-// export into integer array attribute
-i[]@numbers = numbers;
+i[]@numbers = numbers; // export into integer array attribute
+					  //导出整数数组属性
 
 // flattening an array of vectors and reverting it
+// 将一个向量数组转换成一维数组，并恢复向量数组
 vector vectors[] = { {1,2,3}, {4,5,6}, {7,8,9} };
 f[]@serializedVectors = serialize(vectors);
 v[]@unserializedFloats = unserialize(f[]@serializedVectors);
@@ -287,14 +300,20 @@ v[]@unserializedFloats = unserialize(f[]@serializedVectors);
 <br>
 
 #### Arrays and strings example
+#### 数组及字符串样例
 ```C
 // simple example of manipulating strings and arrays
 // it will convert /path/to/the/project/file/project_v3.hipnc
 // into            /path/to/the/project/file/preview/project_v3_img_0001.jpg
 // with 0001 being current frame number
+// 简单的操作字符串和数组的例子，它将转换 /path/to/the/project/file/project_v3.hipnc
+// 到 /path/to/the/project/file/preview/project_v3_img_0001.jpg
+// 0001代表当前帧数
 
 string path = chs("path"); // get string from path parameter of the current hipfile
+						  // 获取当前.hip文件路径字符串
 s@pathOrig = path; // store into attribute original value
+				  // 存储并初始化值
 
 string pathSplit[] = split(path, "/"); // split path into array of strings based on "/" character
 
