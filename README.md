@@ -100,7 +100,7 @@ using this syntax
 // once you type ch*() in your code, you can press a button on the right, to
 // 当你在代码中使用了 ch*() 
 // generate a UI parameter for it automatically, you can do the same by hand as well
-// 你可以手动点击右边的按钮生成UI界面以供控制参数
+// 你可以手动点击右边的按钮生成滑动条以供控制参数
 float y = chf("y_position");
 vector col = chv("color");
 matrix3 xform = ch3("xform");
@@ -138,30 +138,34 @@ vector P1, P2, P3, P_new;
 // point from second input with the same @ptnum is retrieved
 // v@P can also be replaced with @P, since its signature can be guessed as it is
 // commonly used attribute, however I prefer explicit declaration :)
-//这是读取属性的一种方式，但只有当两个输入值完全相同时才会生效
+//这是一种读取属性的方式，但只有当两个输入值完全相同时才会生效
 //从第二个point获取属性并检索相同的@ptnum v@P也可以用@P替换 
 //从它的标识可看出来它是常用属性，但我更喜欢明确的声明:)
-// v@ - vector, i@ - integer, f@ - float, 3@ - matrix3, p@ - vector4
-// 4@ - matrix4, 2@ - matrix2, u@ - vector2, s@ - string,
+// v@ - vector向量, i@ - integer整型, f@ - float浮点, 3@ - matrix3 3x3矩阵, p@ - vector4 四维向量
+// 4@ - matrix4 4x4矩阵, 2@ - matrix2 2x2矩阵, u@ - vector2 二维向量, s@ - string字符串,
 //P1 = v@P;
 //P2 = v@opinput1_P; // inputs numbering starts at 0, therefore 1 refers to the second input
 					 //输入值从第0位开始，因此1是指第二个输入值
 
 // this approach is useful for querying attributes from different points (other from the currently processed one)
 // node input numbering starts from 0 (first input), 1 (second input) ...
-//下面这种方法有利于查询点属性
+//这种方法有利于从不同的点查询属性，节点输入编号从0(第一个输入),1(第二个输入)等……
 
 P1 = point(0, "P", @ptnum);
 P2 = point(1, "P", @ptnum);
 
 // note that you can also read attributes from node, which is not connected
+//注意，你可以从其它节点读取属性，如果没有链接到当前节点需要使用"op:"语法
 // to the current node using the "op:" syntax
 // this is valid for any function which is expecting geo handle (sampling from other volumes...)
+//这个方法可以适用于任何函数的处理(从其他体积采样等……)
 // note that Houdini network UI will not detect this dependency when Show -> Dependency links display is enabled
+//注意，在Houdini网络中当显示->依赖链接时，UI将不会检测到这种依赖性 
 P3 = point("op:../pig_shape", "P", @ptnum);
 
 
 // blend positions
+//混合位置属性
 P_new = lerp(P1, P2, blend);
 P_new = lerp(P_new, P3, blendPig);
 
@@ -170,19 +174,23 @@ v@P = P_new;
 <br>
 
 #### Exporting attributes
+#### 输出属性
 ```C
 // create a new attribute simply by typing *@attrib_name with
 // * representing its signature
+//通过输入 *类型@属性名称 以创建一个新属性
 // v@ - vector, i@ - integer, f@ - float, 3@ - matrix3, p@ - vector4
 // 4@ - matrix4, 2@ - matrix2, u@ - vector2, s@ - string
 
 v@myVector = {1,2,3};
 // vectors with functions/variables in them need to be created with set()
+// 向量函数/变量创建时 需要使用set()初始化
 u@myVectorFunc = set(@Frame, v@P.y);
 u@myVector2 = {4,5};
 f@myFloat = 400.0;
 i@myInteger = 727;
 3@myMatrix3x3 = matrix3( ident() ); // this line contains function casting, which is explained in functions_casting section
+									//这一行包含着构造函数，将会在functions_casting章节中讲到
 4@myMatrix4x4 = matrix( ident() );
 s@myString = "abc";
 
@@ -191,24 +199,39 @@ s@myString = "abc";
 // and if they do not exist, they need to be added first
 // setpointattrib() is also the only way of setting an attribute on newly
 // created points
-addpointattrib(0, "Cd", {0,0,0});
-setpointattrib(0, "Cd", 559, {1,0,0});
+// 可以为不同的点设置一个不同的属性
+addpointattrib(0, "Cd", {0,0,0});//全局属性设置
+int  addpointattrib(int geohandle, string name, <type>defvalue)
+int  addpointattrib(int geohandle, string name, <type>defvalue[])
+
+setpointattrib(0, "Cd", 559, {1,0,0});//局部属性设置
+int  setpointattrib(int geohandle, string name, int point_num, <type>value, string mode="set")
+int  setpointattrib(int geohandle, string name, int point_num, <type>value[], string mode="set")
+
 
 // arrays can be exported as well
+// 数组也可以输出
 v[]@myVectorArray = { {1,2,3}, {4,5,6}, {7,8,9} };
 u[]@myVector2Array = { {4,5}, {6,7} };
 f[]@myFloatArray = { 4.0, 2.7, 1.3};
 i[]@myIntegerArray = {132, 456, 789};
 // arrays containing functions/variables need to be initialized with array() function
+// 数组包含函数/变量时，需要使用 array()函数 初始化
 3[]@myMatrix3x3Array = array( matrix3( ident() ), matrix3( ident() ) * 5 );
 4[]@myMatrix4x4Array = array( matrix( ident() ), matrix( ident() ) * 9 );
 s[]@myStringArray = { "abc", "def", "efg" };
+<matrix> ident()
+//返回识别到的矩阵参数到指定矩阵类型.
+
+
 ```
 <br>
 
 #### Reading arrays
+#### 读取数组
 ```C
 // this is how you can create local array variables and load array attributes into them
+// 本章将介绍如何创建本地数组变量并读取数组属性
 vector myVectorArray[] = v[]@myVectorArray;
 
 matrix3 a = ident() * 5;
