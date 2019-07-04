@@ -39,10 +39,10 @@ It is the best to check all the nodes with open *Geometry Spreadsheet* and *Cons
 
 ### Topics
 * [Reading parameter values/读取参数值](#reading-parameter-values)
-* [Reading attributes](#reading-attributes)
-* [Exporting attributes](#exporting-attributes)
-* [Reading arrays](#reading-arrays)
-* [Arrays](#arrays)
+* [Reading attributes/读取属性](#reading-attributes)
+* [Exporting attributes/输出属性](#exporting-attributes)
+* [Reading arrays/读取数组](#reading-arrays)
+* [Arrays/数组](#arrays)
 * [Arrays and strings example](#arrays-and-strings-example)
 * [Reading and writing Matrices](#reading-and-writing-matrices)
 * [Checking for attributes](#checking-for-attributes)
