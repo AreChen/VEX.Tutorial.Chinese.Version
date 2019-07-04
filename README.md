@@ -2,7 +2,7 @@
 ## A collection of code snippets and examples showing syntax and capabilities of VEX language inside SideFX Houdini/展示SideFX Houdini中VEX语法及样例的集合
 <p align="right"><small><sup>by Juraj Tomori</sup></small></p>
 
-<p align="right"><small><sup>Translate By AreChen</sup></small></p>
+<p align="right"><small><sup>Translate&Recreate By AreChen</sup></small></p>
 <br>
 
 ### Intro
