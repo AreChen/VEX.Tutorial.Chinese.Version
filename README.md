@@ -1,5 +1,9 @@
 # VEX tutorial/教程
 ## A collection of code snippets and examples showing syntax and capabilities of VEX language inside SideFX Houdini/展示SideFX Houdini中VEX语法及样例的集合
+## 译者导语：翻译此篇教程目的如下 一、帮助国内Houdini爱好者们了解VEX，为国内VFX事业做贡献. 二、学习VEX提升自我. 三、英语学习与练习.此篇教程并不是简单翻译，我通过亲身练习&学习对教程二次创造，增改内容，引入Houdini 官方HelpFile帮助理解，与大家共同进步.
+## 未来计划
+### 待完成后进行二次校对 图文并茂 增添Hip文件
+
 <p align="right"><small><sup>by Juraj Tomori</sup></small></p>
 
 <p align="right"><small><sup>Translate&Recreate By AreChen</sup></small></p>
