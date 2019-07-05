@@ -316,18 +316,28 @@ s@pathOrig = path; // store into attribute original value
 				  // 存储并初始化值
 
 string pathSplit[] = split(path, "/"); // split path into array of strings based on "/" character
+									  // 将路径使用"/"分割
 
 string fileName = pop(pathSplit); // remove last value of the array and assign it into a variable
+								// 移除数组的最后一个值并将其赋值给一个变量
 string fileNameSplit[] = split(fileName, "."); // split string into an array based on "." character
+											  // 将数组使用"."分割
 fileNameSplit[0] = fileNameSplit[0] + sprintf("_img_%04d", @Frame); // append into the string _img_0001 (current frame number)
+													// 将 _img_0001 添加至字符串(@Frame当前帧数)
 fileNameSplit[-1] = "jpg"; // change file extension
+						  // 改变文件扩展名
 fileName = join(fileNameSplit, "."); // convert array of strings into a one string with "." between original array elements
+									// 转换字符串数组到一个字符串变量并使用 "." 分开
 push(pathSplit, "preview"); // append "preview" string into the array of strings
+						   // 添加"preview"字符串到字符串数组
 push(pathSplit, fileName); // append file name into the array of strings
+						  // 添加文件名到字符串数组
 
 path = "/" + join(pathSplit, "/"); // convert array of strings into one string, starting with "/" for root, because it is not added before the first element, only to in-betweens
+								  // 转换字符串数组到一个字符串 以"/"开始，因为并不是在第一个元素之前添加而是在两者之间
 
 s@path = path; // output into the attribute
+			  // 输出到属性
 ```
 <br>
 
