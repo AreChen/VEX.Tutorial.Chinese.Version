@@ -29,39 +29,39 @@ It is best to check all the nodes with open *Geometry Spreadsheet* and *Console 
 检阅时最好打开 **Geometry Spreadsheet** 和 **Console Output** 窗口检查这些节点以查看属性输出的值。或者，您可以使用此页面快速查看所涵盖的主题以及此处包含的大部分代码。这里并没有涵盖所有的代码，因为有时它可能在 Houdini 之外并没有多大意义。必要时我会在 **myLib.h** 中包含相关函数或附上截图。
 
 ### Topics / 主题
-* [Automatic attribute creation / 自动属性创建](#automatic-attribute-creation)
-* [Getting transformation from OBJs / 从OBJ获取变换](#getting-transformation-from-objs)
-* [Intrinsics / 内在属性](#intrinsics)
-* [VDB intrinsics / VDB内在属性](#vdb-intrinsics)
-* [Volumes / 体积](#volumes)
-* [VOPs / Using Snippets / VOP节点/使用代码片段](#vops--using-snippets)
-* [VOPs / Using Inline Code / VOP节点/使用内联代码](#vops--using-inline-code)
-* [DOPs / Volumes workflow / DOP节点/体积工作流](#dops--volumes-workflow)
-* [DOPs / Gas Field Wrangle / DOP节点/气体场处理](#dops--gas-field-wrangle)
-* [DOPs / Gas Field Wrangle - accessing DOPs and SOPs data / DOP节点/气体场处理-访问DOP和SOP数据](#dops--gas-field-wrangle---accessing-dops-and-sops-data)
-* [DOPs / Geometry workflow / DOP节点/几何工作流](#dops--geometry-workflow)
-* [DOPs / Geometry Wrangle / DOP节点/几何处理](#dops--geometry-wrangle)
-* [DOPs / Geometry Wrangle - accessing fields / DOP节点/几何处理-访问场](#dops--geometry-wrangle---accessing-fields)
-* [Conditions / 条件语句](#conditions)
-* [Loops / 循环](#loops)
-* [Stopping For-Each SOP from VEX / 从VEX停止For-Each SOP](#stopping-for-each-sop-from-vex)
-* [Printing and formatting / 打印与格式化](#printing-and-formatting)
-* [Printing attributes / 打印属性](#printing-attributes)
-* [Including external VEX files / 包含外部VEX文件](#including-external-vex-files)
-* [Include math.h / 包含math.h](#include-mathh)
-* [Using macros / 使用宏](#using-macros)
-* [Functions / 函数](#functions)
-* [Functions overloading / 函数重载](#functions-overloading)
-* [Variables casting / 变量类型转换](#variables-casting)
-* [Vectors swizzling / 向量重组](#vectors-swizzling)
-* [Functions casting / 函数类型转换](#functions-casting)
-* [Structs / 结构体](#structs)
-* [Structs in Attribute Wrangle / 属性处理中的结构体](#structs-in-attribute-wrangle)
-* [Groups / 组](#groups)
-* [Attribute typeinfo / 属性类型信息](#attribute-typeinfo)
-* [Attributes to create / 要创建的属性](#attributes-to-create)
-* [Enforce prototypes / 强制原型](#enforce-prototypes)
-* [Attribute default values / 属性默认值](#attribute-default-values)
+* [Automatic attribute creation / 自动属性创建](#automatic-attribute-creation--自动属性创建)
+* [Getting transformation from OBJs / 从 OBJ 获取变换](#getting-transformation-from-objs--从-obj-获取变换)
+* [Intrinsics / 内在属性](#intrinsics--内在属性)
+* [VDB intrinsics / VDB 内在属性](#vdb-intrinsics--vdb内在属性)
+* [Volumes / 体积](#volumes--体积)
+* [VOPs / Using Snippets / VOPs / 使用片段](#vops--using-snippets--vops--使用片段)
+* [VOPs / Using Inline Code / VOPs / 使用内联代码](#vops--using-inline-code--vops--使用内联代码)
+* [DOPs / Volumes workflow / DOPs / 体积工作流程](#dops--volumes-workflow--dops--体积工作流程)
+* [DOPs / Gas Field Wrangle / DOPs / 气体场操作](#dops--gas-field-wrangle--dops--气体场操作)
+* [DOPs / Gas Field Wrangle - accessing DOPs and SOPs data / DOPs / 气体场操作 访问 DOPs 和 SOPs 数据](#dops--gas-field-wrangle---accessing-dops-and-sops-data--dops--气体场操作-访问-DOPs-和-SOPs-数据)
+* [DOPs / Geometry workflow / DOPs / 几何体工作流程](#dops--geometry-workflow--dops--几何体工作流程)
+* [DOPs / Geometry Wrangle / DOPs / 几何体操作](#dops--geometry-wrangle--dops--几何体操作)
+* [DOPs / Geometry Wrangle - accessing fields / DOPs / 几何体操作 访问字段](#dops--geometry-wrangle---accessing-fields--dops--几何体操作-访问字段)
+* [Conditions / 条件](#conditions--条件)
+* [Loops / 循环](#loops--循环)
+* [Stopping For-Each SOP from VEX / 从 VEX 停止 For-Each SOP](#stopping-for-each-sop-from-vex--从-VEX-停止-For-Each-SOP)
+* [Printing and formatting / 打印和格式化](#printing-and-formatting--打印和格式化)
+* [Printing attributes / 打印属性](#printing-attributes--打印属性)
+* [Including external VEX files / 包含外部 VEX 文件](#including-external-vex-files--包含外部-vex-文件)
+* [Include math.h / 包含 math.h](#include-mathh--包含-mathh)
+* [Using macros / 使用宏](#using-macros--使用宏)
+* [Functions / 函数](#functions--函数)
+* [Functions overloading / 函数重载](#functions-overloading--函数重载)
+* [Variables casting / 变量转换](#variables-casting--变量转换)
+* [Vectors swizzling / 向量重组](#vectors-swizzling--向量重组)
+* [Functions casting / 函数类型转换](#functions-casting--函数转换)
+* [Structs / 结构体](#structs--结构体)
+* [Structs in Attribute Wrangle / 属性操作中的结构体](#structs-in-attribute-wrangle--属性操作中的结构体)
+* [Groups / 组](#groups--组)
+* [Attribute typeinfo / 属性类型信息](#attribute-typeinfo--属性类型信息)
+* [Attributes to create / 要创建的属性](#attributes-to-create--要创建的属性)
+* [Enforce prototypes / 强制原型](#enforce-prototypes--强制原型)
+* [Attribute default values / 属性默认值](#attribute-default-values--属性默认值)
 
 ### Tutorial / 教程
 
@@ -302,7 +302,6 @@ s@path = path; // output into the attribute
               // 输出到属性
 ```
 
-**注：本段为 README.md 的前几个章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers the first few chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Reading and writing Matrices / 矩阵的读写
 ```C
@@ -509,7 +508,6 @@ if (@ptnum == 4) {
 setprimintrinsic(0, "transform", @ptnum, xform, "set");
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### VDB intrinsics / VDB 内在属性
 ```C
@@ -649,7 +647,6 @@ Here I will show basic steps of creating a simple custom DOP solver operating on
    ![Sop Solver volume](./img/sop_solver_volume.jpg)
 <br>
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### DOPs / Gas Field Wrangle / DOPs / 气体场操作
 *Check Houdini project to get the best idea of how it works.*  
@@ -688,7 +685,7 @@ f@pig_in *= .9;
 // f@pig_in = volumesample(0, "pig_in", v@P - {0.01});
 ```
 
-#### DOPs / Gas Field Wrangle - accessing DOPs and SOPs data / DOPs / 气体场操作 - 访问 DOPs 和 SOPs 数据
+#### DOPs / Gas Field Wrangle - accessing DOPs and SOPs data / DOPs / 气体场操作 访问 DOPs 和 SOPs 数据
 ```C
 // it is also possible to access DOP fields using this syntax
 // we can sample "pig_mask" without setting the field "Inputs"
@@ -753,7 +750,7 @@ Here I will show basic steps of creating a simple custom DOP solver operating on
 v@P *= 1.1;
 ```
 
-#### DOPs / Geometry Wrangle - accessing fields / DOPs / 几何体操作 - 访问字段
+#### DOPs / Geometry Wrangle - accessing fields / DOPs / 几何体操作 访问字段
 [link to explanation](#dops--gas-field-wrangle---accessing-dops-and-sops-data)  
 [链接到解释](#dops--gas-field-wrangle---accessing-dops-and-sops-data)
 ```C
@@ -774,7 +771,6 @@ mask = volumesample("op:../" + ":box/pig_mask", 0, v@P);
 if (mask != 0) v@Cd = {1,0,0};
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Conditions / 条件
 ```C
@@ -991,7 +987,6 @@ printf(multiLine);
 printf("\n\n");
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Printing attributes / 打印属性
 ```C
@@ -1154,7 +1149,6 @@ i@add_ten = ADDTEN(10);
 #define ADDTEN(val)     (val+10)
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Functions / 函数
 ```C
@@ -1331,7 +1325,6 @@ float randomizeN(vector N; float amount; int seed) {
 }
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Variables casting / 变量转换
 ```C
@@ -1407,7 +1400,6 @@ v@Cd = dot(v@N, normalize( vector( rand(@ptnum) ) ) ) * 0.5 + 0.5;
 // v@Cd = length( vector( rand(v@P) ) ) * .5;
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Structs / 结构体
 ```C
@@ -1522,7 +1514,6 @@ foreach(hipFile i;allHips) {
 // 结果：[dust_024.hip, odforce_file_001.hipnc, blood_123.hip]
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 *From myLib.h:*  
 *来自 myLib.h：*
@@ -1641,7 +1632,6 @@ hipFile[] findAllHipFiles(string text) {
 }
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Structs in Attribute Wrangle / 属性操作中的结构体
 ```C
@@ -1723,7 +1713,6 @@ int pt_group_red = inpointgroup(0, "red", pt_reflected);
 i@group_blue = pt_group_red;
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Attribute typeinfo / 属性类型信息
 ```C
@@ -1843,7 +1832,6 @@ int B = 4;
 @new_int_array_attrib = {1,2,3,4};
 ```
 
-**注：本段为 README.md 的后续章节翻译，后续章节将在确认本部分成功保存后继续添加。 / Note: This section covers additional chapters of README.md. Subsequent chapters will be added after confirming the successful saving of this part.**
 
 #### Attribute default values / 属性默认值
 ```C
@@ -1916,5 +1904,3 @@ Please let me know if you find any mistakes or have ideas for improvements. I wi
 ### Contributing / 贡献
 Feel free to contribute to this project by creating pull requests or by [buying me a beer :)](https://www.paypal.me/jtomori)  
 欢迎通过创建拉取请求或[请我喝杯啤酒 :)](https://www.paypal.me/jtomori) 来为这个项目做出贡献
-
-**注：这是 README.md 的最后部分内容，至此中英双语翻译已全部完成。 / Note: This is the final part of README.md, and the bilingual translation is now fully completed.**
